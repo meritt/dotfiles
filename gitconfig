@@ -1,0 +1,30 @@
+[user]
+	name = Alexey Simonenko
+	email = dwarfman@gmail.com
+[github]
+	user = meritt
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+[branch]
+	autosetupmerge = true
+[git-tmbundle]
+	gitnub-path = /usr/local/bin/nub
+[gui]
+	recentrepo = /Users/simonenko/Sites/Projects/time2/
+[core]
+	editor = mate -w
+[help]
+	autocorrect = 1
+[merge]
+	tool = extMerge
+[mergetool "extMerge"]
+	cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	trustExitCode = false
+[diff "exif"]
+	textconv = exiftool
+[diff "doc"]
+	textconv = strings
