@@ -1,30 +1,38 @@
 [user]
-	name = Alexey Simonenko
-	email = dwarfman@gmail.com
-[github]
-	user = meritt
+        name = Alexey Simonenko
+        email = dwarfman@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-[branch]
-	autosetupmerge = true
-[git-tmbundle]
-	gitnub-path = /usr/local/bin/nub
-[gui]
-	recentrepo = /Users/simonenko/Sites/Projects/time2/
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+        ui = true
+[github]
+        user = meritt
 [core]
-	editor = mate -w
+        editor = mate -w
 [help]
-	autocorrect = 1
+        autocorrect = 1
 [merge]
-	tool = extMerge
+        tool = extMerge
 [mergetool "extMerge"]
-	cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	trustExitCode = false
+        cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+        trustExitCode = false
 [diff "exif"]
-	textconv = exiftool
+        textconv = exiftool
 [diff "doc"]
-	textconv = strings
+        textconv = strings
+[alias]
+        st = status
+        ci = commit
+        br = branch
+        co = checkout
+        lg = log --oneline --decorate
+[branch]
+        autosetupmerge = true
+[difftool "Kaleidoscope"]
+        cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+        prompt = false
+[diff]
+        tool = Kaleidoscope
