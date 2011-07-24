@@ -1,12 +1,9 @@
-export PATH=/Users/simonenko/Solutions/ZendFramework/latest/bin:/Users/simonenko/Installed/Go/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:$PATH
-export GOROOT=/Users/simonenko/Installed/Go/hg
-export GOBIN=/Users/simonenko/Installed/Go/bin
-export GOARCH=386
-export GOOS=darwin
+export PATH=/Users/simonenko/Solutions/ZendFramework/latest/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export DISPLAY=:0.0
 export EDITOR=/usr/bin/pico
 export ZF_PATH=/Users/simonenko/Solutions/ZendFramework/latest/library
 export SVN_EDITOR='mate -w'
+export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
 LC_ALL=ru_RU.utf-8
 
@@ -32,3 +29,6 @@ alias restart="sudo apachectl restart"
 alias x="exit"
 alias zf=zf.sh
 alias aempty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.placeholder \;'
+alias ojpg='jpegoptim --strip-all'
+alias opng='optipng'
+alias myender='ender -b qwery,bean,bonzo,klass,reqwest,underscore'
