@@ -1,38 +1,62 @@
 [user]
-        name = Alexey Simonenko
-        email = dwarfman@gmail.com
+  name = Alexey Simonenko
+  email = dwarfman@gmail.com
+
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        interactive = auto
-        ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+
 [github]
-        user = meritt
+  user = meritt
+
 [core]
-        editor = mate -w
+  editor = mate -w
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+
 [help]
-        autocorrect = 1
+  autocorrect = 1
+
 [merge]
-        tool = extMerge
+  tool = Kaleidoscope
+
 [mergetool "extMerge"]
-        cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-        trustExitCode = false
+  cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  trustExitCode = false
+
 [diff "exif"]
-        textconv = exiftool
+  textconv = exiftool
+
 [diff "doc"]
-        textconv = strings
+  textconv = strings
+
 [alias]
-        st = status
-        ci = commit
-        br = branch
-        co = checkout
-        lg = log --oneline --decorate
+  # Add untracked, remove deleted, and show status
+  addu = !git add . && git add -u && git status
+
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  lg = log --oneline --decorate
+
 [branch]
-        autosetupmerge = true
+  autosetupmerge = true
+
 [difftool "Kaleidoscope"]
-        cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
 [difftool]
-        prompt = false
+  prompt = false
+
 [diff]
-        tool = Kaleidoscope
+  tool = Kaleidoscope
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+
+[mergetool]
+  prompt = false
