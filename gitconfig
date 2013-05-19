@@ -13,25 +13,9 @@
   user = meritt
 
 [core]
-  editor = mate -w
+  editor = /usr/local/bin/mate -w
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
-
-[help]
-  autocorrect = 1
-
-[merge]
-  tool = Kaleidoscope
-
-[mergetool "extMerge"]
-  cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  trustExitCode = false
-
-[diff "exif"]
-  textconv = exiftool
-
-[diff "doc"]
-  textconv = strings
 
 [alias]
   # Add untracked, remove deleted, and show status
@@ -46,17 +30,14 @@
 [branch]
   autosetupmerge = true
 
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff "exif"]
+  textconv = exiftool
 
-[difftool]
-  prompt = false
+[diff "doc"]
+  textconv = strings
 
-[diff]
-  tool = Kaleidoscope
+[help]
+  autocorrect = 1
 
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-
-[mergetool]
-  prompt = false
+[push]
+  default = matching
