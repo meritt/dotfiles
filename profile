@@ -1,12 +1,17 @@
-export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/share/npm/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export DISPLAY=:0.0
-export EDITOR="$HOME/bin/mate -w"
+export EDITOR="/usr/local/bin/mate -w"
 export MANPAGER="less -X"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
-export NODE_PATH=/usr/local/lib/node_modules:/usr/local/lib/node:$NODE_PATH
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
 
 LC_ALL=ru_RU.utf-8
 
@@ -80,16 +85,6 @@ PS1+="\$(prompt_git)" # Git details
 PS1+="\n" # Newline
 PS1+="$style_chars\$ $RESET" # $ (and reset color)
 
-svgz() {
-  gzip $1 -S z
-}
-
-svg() {
-  file = $1
-  name = ${file%.*}
-  mv ${file} ${name}.svg.gz && gunzip ${name}.svg.gz
-}
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ~='cd ~'
@@ -102,9 +97,11 @@ alias ll='ls -Fla'
 alias ls='ls -Fhas'
 alias la="ls -AGFoh"
 alias mv='mv -i'
-alias vi='vim -b'
-alias digany='dig +noall +answer -t any '
 alias x="exit"
-alias flushdns="dscacheutil -flushcache"
+alias digany='dig +noall +answer -t any '
+alias restart='sudo apachectl restart'
+alias whois="whois -h whois-servers.net"
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
-shopt -s histappend
+# Update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='brew update; brew upgrade; brew cleanup; npm update -g; gem update --system; gem update; sudo pear update-channels; sudo pear upgrade-all; sudo pecl upgrade-all'
