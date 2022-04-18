@@ -13,15 +13,17 @@
 	user = meritt
 
 [core]
-	editor = /usr/local/bin/mate -w
+	editor = nano
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	autocrlf = input
 
 [alias]
 	# Add untracked, remove deleted, and show status
 	addu = !git add . && git add -u && git status
 
 	st = status
+	ts = status
 	ci = commit
 	br = branch
 	co = checkout
@@ -41,3 +43,9 @@
 
 [push]
 	default = matching
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
