@@ -1,43 +1,43 @@
 [user]
-  name = Alexey Simonenko
-  email = dwarfman@gmail.com
+	name = Alexey Simonenko
+	email = dwarfman@gmail.com
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
 
 [github]
-  user = meritt
+	user = meritt
 
 [core]
-  editor = /usr/local/bin/mate -w
-  excludesfile = ~/.gitignore
-  attributesfile = ~/.gitattributes
+	editor = /usr/local/bin/mate -w
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 
 [alias]
-  # Add untracked, remove deleted, and show status
-  addu = !git add . && git add -u && git status
+	# Add untracked, remove deleted, and show status
+	addu = !git add . && git add -u && git status
 
-  st = status
-  ci = commit
-  br = branch
-  co = checkout
-  lg = log --oneline --decorate
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	lg = log --oneline --decorate
 
 [branch]
-  autosetupmerge = true
+	autosetupmerge = true
 
 [diff "exif"]
-  textconv = exiftool
+	textconv = exiftool
 
 [diff "doc"]
-  textconv = strings
+	textconv = strings
 
 [help]
-  autocorrect = 1
+	autocorrect = 1
 
 [push]
-  default = matching
+	default = matching
