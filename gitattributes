@@ -1,5 +1,1 @@
-*.png diff=exif
-*.jpg diff=exif
-*.gif diff=exif
-*.ico diff=exif
 *.doc diff=doc
